@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
 
 <script type="module"
 src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
@@ -18,17 +23,19 @@ font-family:Arial;
 
 #titulo{
 position:absolute;
-top:40px;
+top:30px;
 width:100%;
 text-align:center;
 color:white;
-font-size:50px;
+font-size:40px;
 z-index:100;
+font-weight:bold;
 }
 
 model-viewer{
 width:100vw;
 height:100vh;
+display:block;
 }
 
 </style>
@@ -44,7 +51,13 @@ Cargando...
 <model-viewer
 id="visor"
 camera-controls
-auto-rotate>
+auto-rotate
+autoplay
+shadow-intensity="1"
+camera-orbit="0deg 75deg 2m"
+min-camera-orbit="auto auto 1m"
+max-camera-orbit="auto auto 5m"
+style="width:100%;height:100%;">
 </model-viewer>
 
 <audio id="sonido"></audio>
@@ -60,13 +73,13 @@ window.location.search
 const datos={
 
 gorila:{
-nombre:"FABRICA 3D  GORILA",
+nombre:"FABRICA 3D GORILA",
 modelo:"MODELOS/Gorila1.glb",
-sonido:"sonidos/rugido-gorila.mp3"
+sonido:"SONIDOS/rugido-gorila.mp3"
 },
 
 leon:{
-nombre:"FABRICA 3D  LEÓN",
+nombre:"FABRICA 3D LEÓN",
 modelo:"MODELOS/LEON1.glb",
 sonido:"SONIDOS/rugido-leon.mp3"
 }
@@ -107,4 +120,5 @@ navigator.vibrate(
 </script>
 
 </body>
+
 </html>
